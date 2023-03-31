@@ -1,0 +1,35 @@
+td {
+    padding: 15px;
+    /* border-bottom: 1px solid black; */
+    /* border-top: 1px solid black; */
+    margin: 0;
+}
+
+.headers {
+    text-align: center;
+}
+
+.tables {
+    text-align: left;
+}
+
+.completed {
+    color: rgb(26, 90, 26);
+}
+
+.incomplete {
+    color: rgb(147, 19, 19);
+}
+
+.center {
+    padding-left: 5%;
+}
+
+.center button {
+    margin: 5px;
+}
+
+.dateSection {
+    width: 25%;
+    margin-left: 15px;
+}

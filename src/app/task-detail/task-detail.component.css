@@ -1,0 +1,12 @@
+.mat-mdc-progress-bar {
+    --mdc-linear-progress-active-indicator-color: #ee0c0c;
+}
+
+.peopletags {
+    color: rgb(189, 163, 12);
+    font-weight: bold;
+}
+
+.title {
+    margin-top: 25px;
+}
