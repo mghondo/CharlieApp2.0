@@ -32,6 +32,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatButtonModule } from '@angular/material/button';
 import { MatPseudoCheckboxModule } from '@angular/material/core';
 
+
 const MaterialComponents =[
     CommonModule,
     MatButtonModule,
@@ -63,7 +64,10 @@ const MaterialComponents =[
     MatSnackBarModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatPaginatorModule,
+    MatTableModule
+    
 ]
 @NgModule({
   imports: [MaterialComponents],

@@ -13,37 +13,77 @@
 <br>
 
 <mat-tab-group>
-  <!-- <mat-tab label="Upcoming"></mat-tab> -->
-  <mat-tab label="Incomplete"></mat-tab>
-  <mat-tab label="Completed"></mat-tab>
+
+  <mat-tab id="TasksIncomplete" label="Incomplete">
+    <table matSort class="taskTable">
+      <tr class="headers">
+        <th mat-sort-header="name" *matHeaderCellDef>Name</th>
+        <th mat-sort-header="whenStart" *matHeaderCellDef>When to Start</th>
+        <th mat-sort-header="whenComplete" *matHeaderCellDef>When to Complete</th>
+        <th mat-sort-header="people" *matHeaderCellDef>People Assigned</th>
+        <th mat-sort-header="location" *matHeaderCellDef>Where?</th>
+      </tr>
+      <tr class="tables" *ngFor="let task of incompleteTasks">   
+          <td><button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+            <mat-icon>search</mat-icon>
+          </button> <mat-icon class="spaceright {{completedClass(task.completed)}}">{{completedTask(task.completed)}}</mat-icon>{{task.taskName}}</td> 
+          <td>{{returnDate(task?.whenToStart)}} at {{returnTime(task?.whenToStart)}}</td> 
+          <td>{{returnDate(task?.whenToComplete)}} at {{returnTime(task?.whenToComplete)}}</td> 
+          <td>{{task.peopleInvolved.join(', ')}}</td> 
+          <td>{{task?.locations.join(', ')}}</td>
+      </tr>
+    </table>
+  </mat-tab>
+<br><br><br>
+  <mat-tab id="TasksCompleted" label="Completed">
+    <table matSort class="taskTable">
+      <tr class="headers">
+        <th mat-sort-header="name" *matHeaderCellDef>Name</th>
+        <th mat-sort-header="whenStart" *matHeaderCellDef>When to Start</th>
+        <th mat-sort-header="whenComplete" *matHeaderCellDef>When to Complete</th>
+        <th mat-sort-header="people" *matHeaderCellDef>People Assigned</th>
+        <th mat-sort-header="location" *matHeaderCellDef>Where?</th>
+      </tr>
+  
+      <tr class="tables" *ngFor="let task of completedTasks">   
+          <td><button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+            <mat-icon>search</mat-icon>
+          </button> <mat-icon class="spaceright {{completedClass(task.completed)}}">{{completedTask(task.completed)}}</mat-icon>{{task.taskName}}</td> 
+          <td>{{returnDate(task?.whenToStart)}} at {{returnTime(task?.whenToStart)}}</td> 
+          <td>{{returnDate(task?.whenToComplete)}} at {{returnTime(task?.whenToComplete)}}</td> 
+          <td>{{task.peopleInvolved.join(', ')}}</td> 
+          <td>{{task?.locations.join(', ')}}</td>
+      </tr>
+    </table>
+  </mat-tab>
+  <mat-tab id="TasksAll" label="All">
+    <table matSort class="taskTable">
+      <tr class="headers">
+        <th mat-sort-header="name" *matHeaderCellDef>Name</th>
+        <th mat-sort-header="whenStart" *matHeaderCellDef>When to Start</th>
+        <th mat-sort-header="whenComplete" *matHeaderCellDef>When to Complete</th>
+        <th mat-sort-header="people" *matHeaderCellDef>People Assigned</th>
+        <th mat-sort-header="location" *matHeaderCellDef>Where?</th>
+      </tr>
+      <tr class="tables" *ngFor="let task of tasks">   
+          <td><button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+            <mat-icon>search</mat-icon>
+          </button> <mat-icon class="spaceright {{completedClass(task.completed)}}">{{completedTask(task.completed)}}</mat-icon>{{task.taskName}}</td> 
+          <td>{{returnDate(task?.whenToStart)}} at {{returnTime(task?.whenToStart)}}</td> 
+          <td>{{returnDate(task?.whenToComplete)}} at {{returnTime(task?.whenToComplete)}}</td> 
+          <td>{{task.peopleInvolved.join(', ')}}</td> 
+          <td>{{task?.locations.join(', ')}}</td>
+      </tr>
+    </table>
+  </mat-tab>
+
 </mat-tab-group>
+
+
+
 
 <br><br><br>
 
-<table matSort>
-    <tr class="headers">
-      <!-- <th mat-sort-header="search">Search</th> -->
-      <th mat-sort-header="name">Name</th>
-      <th mat-sort-header="whenStart">When to Start</th>
-      <th mat-sort-header="whenComplete">When to Complete</th>
-      <th mat-sort-header="people">People Assigned</th>
-      <th mat-sort-header="completed">Completed</th>
-    </tr>
-  
-    <tr *ngFor="let task of tasks" class="tables">
-      
-        <td><button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
-          <mat-icon>search</mat-icon>
-        </button>{{task.taskName}}</td> 
-        <td>{{returnDate(task?.whenToStart)}} at {{returnTime(task?.whenToStart)}}</td> 
-        <td>{{returnDate(task?.whenToComplete)}} at {{returnTime(task?.whenToComplete)}}</td> 
-        <td>{{task.peopleInvolved.join(', ')}}</td> 
-        <td><mat-icon class="{{completedClass(task.completed)}}">{{completedTask(task.completed)}}</mat-icon></td> 
-        <td></td>
-        <td></td>
-    </tr>
 
-
-  </table>
   
 

@@ -1,4 +1,5 @@
 import {Injectable} from '@angular/core'
+import { Task } from '../zmodels/task'
 
 @Injectable()
 export class TaskService {
@@ -78,4 +79,26 @@ export class TaskService {
 
         ]
     }
+
+    getCompleted(task:Task){
+        if (task.completed === true){
+            return "Completed"
+        } else {
+            return "Incomplete"
+        }
+    }
+
+    getOnlyCompleted(){
+        return this.getTasks().filter((task: any)=>{
+            return task.completed === true;
+        })
+    }
+
+    getOnlyIncompleted(){
+        return this.getTasks().filter((task: any)=>{
+            return task.completed === false;
+        }) 
+    }
+
+
 }

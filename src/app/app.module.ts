@@ -14,6 +14,7 @@ import { CreateTaskComponent } from './create-task/create-task.component';
 import { appRoutes } from './routes';
 import { LocationListComponent } from './location-list/location-list.component';
 import { ReportsComponent } from './reports/reports.component';
+import { MockTabComponent } from './mock-tab/mock-tab.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ReportsComponent } from './reports/reports.component';
     CreateTaskComponent,
     LocationListComponent,
     ReportsComponent,
+    MockTabComponent,
 
     
   ],
